@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Account_1 = require("./Account");
+const SavingsAccount_1 = require("./SavingsAccount");
+const Bank_1 = require("./Bank");
+const bank = new Bank_1.Bank();
+const acc1 = new Account_1.Account("A001", "Karim", 500);
+const acc2 = new Account_1.Account("A002", "Islam", 600);
+const savings = new SavingsAccount_1.SavingsAccount("S001", "Hassan", 1000, 5);
+bank.addAccount(acc1);
+bank.addAccount(acc2);
+bank.addAccount(savings);
+console.log("Initial Balances:");
+console.log(acc1.accountNumber, acc1.getBalance());
+console.log(acc2.accountNumber, acc2.getBalance());
+console.log(savings.accountNumber, savings.getBalance());
+bank.transfer("A001", "A002", 100);
+console.log("\nAfter Transfer (100 from A001 → A002):");
+console.log(acc1.accountNumber, acc1.getBalance());
+console.log(acc2.accountNumber, acc2.getBalance());
+const interestEarned = savings.applyInterest();
+console.log("\nSavings Account Interest Applied:");
+console.log(`Interest Earned: ${interestEarned}`);
+console.log(savings.accountNumber, savings.getBalance());
+//# sourceMappingURL=index.js.map
