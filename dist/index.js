@@ -22,4 +22,5 @@ const interestEarned = savings.applyInterest();
 console.log("\nSavings Account Interest Applied:");
 console.log(`Interest Earned: ${interestEarned}`);
 console.log(savings.accountNumber, savings.getBalance());
+console.log(acc1.getTransactions());
 //# sourceMappingURL=index.js.map

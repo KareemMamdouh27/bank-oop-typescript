@@ -16,6 +16,7 @@ export class Bank {
         }
         return undefined;
     }
+    
 
     transfer(from: string, to: string, amount: number): void {
         const fromAcc = this.findAccount(from);
