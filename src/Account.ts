@@ -31,4 +31,18 @@ export class Account {
         return this._Transactions.slice();
     }
 
+    filterTransactions (type:"DEPOSIT" | "WITHDRAW" | "TRANSFER" ) :Transactions[] {
+        return this._Transactions.filter(tx => tx.type === type).slice();
+    }
+
+    getTransactionsByDateRange(startDate: Date, endDate:Date) :Transactions[]{
+        const start = startDate.getTime()
+        const end = endDate.getTime();
+
+        return this._Transactions.filter(tx => {
+            const txTime = tx.date.getTime();
+            return txTime >= start && txTime <= end;
+        }); 
+    }
+
 }
